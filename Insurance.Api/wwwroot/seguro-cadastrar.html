@@ -1,0 +1,216 @@
+﻿<html ng-app="insurance">
+<head>
+    <meta charset="UTF-8">
+    <title>Segfy</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="lib/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css" />
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="lib/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="lib/angular-material/angular-material.min.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN THEME GLOBAL STYLES -->
+    <link href="css/components-rounded.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="css/plugins.min.css" rel="stylesheet" type="text/css" />
+    <link href="lib/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet" type="text/css">
+    <link href="lib/md-color-menu/md-color-menu.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME GLOBAL STYLES -->
+    <!-- BEGIN THEME LAYOUT STYLES -->
+    <link href="css/layout.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="css/custom.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link href="css/pages/seguros.css" rel="stylesheet" type="text/css" />
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-locale-pt-br/angular-locale_pt-br.js"></script>
+    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.min.js"></script>
+    <script src="lib/angular-animate/angular-animate.min.js"></script>
+    <script src="lib/angular-aria/angular-aria.min.js"></script>
+    <script src="lib/angular-messages/angular-messages.min.js"></script>
+    <script src="lib/angular-material/angular-material.min.js"></script>
+    <script src="lib/angular-input-masks/angular-input-masks-dependencies.min.js"></script>
+    <script src="lib/angular-input-masks/angular-input-masks.br.js"></script>
+    <script src="lib/angular-br-filters/release/angular-br-filters.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="lib/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>-->
+    <script src="lib/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="lib/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+
+    <script src="js/site.js"></script>
+    <script src="js/layout.min.js"></script>
+    <script src="js/quick-sidebar.min.js"></script>
+
+    <script src="lib/jquery-ui/jquery-ui.min.js"></script>
+    <script src="lib/angular-filter/dist/angular-filter.min.js"></script>
+    <script src="lib/angular-ui-sortable/sortable.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/ng-lodash/build/ng-lodash.min.js"></script>
+    <script src="lib/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="lib/md-color-menu/md-color-menu.js"></script>
+
+    <script src="js/services/SeguroService.js"></script>
+    <script src="js/services/ProdutoTipoService.js"></script>
+
+    <script src="js/directives/helpers.js"></script>
+    <script src="js/directives/input-types.js"></script>
+    <script src="js/directives/uiInput.js"></script>
+    <script src="js/directives/uiModal.js"></script>
+
+    <script src="js/controllers/seguroCadastrarCtrl.js"></script>
+
+</head>
+<body ng-controller="seguroCadastrarCtrl">
+    <div class="page-container">
+        <div class="page-content-wrapper">
+            <div class="row">
+                <div class="col-md-1">
+                    <img src="https://www.segfy.com/Content/img/logo_segfy_top.png" />
+                </div>
+                <div class="col-md-11">
+                    <md-content class="transparent no-overflow margin-bottom-15">
+
+                        <ng-form name="formSeguro" role="form">
+                            <div class="form-body">
+
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <md-toolbar class="md-primary _md _md-toolbar-transitions">
+                                            <div class="md-toolbar-tools">
+                                                <h3>Cadastrar seguro</h3>
+                                            </div>
+                                        </md-toolbar>
+                                        <div class="portlet light material-white bordered">
+
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': (formSeguro['cpf'].$touched && formSeguro['cpf'].$invalid) || (formSeguro['cpf'].$invalid && formSeguro.$submitted) }">
+                                                        <input type="text" ui-br-cpfcnpj-mask ng-model="seguro.cpf" ng-required="true" class="form-control" ng-class="seguro.cpf != undefined ? 'edited' : ''" id="cpf" name="cpf">
+                                                        <span class="help-block" ng-hide="(formSeguro['cpf'].$touched && formSeguro['cpf'].$invalid) || (formSeguro['cpf'].$invalid && formSeguro.$submitted)">CPF ou CNPJ do contratante</span>
+                                                        <span class="help-block help-block-error" ng-messages="formSeguro['cpf'].$error" ng-if="(formSeguro['cpf'].$touched && formSeguro['cpf'].$invalid) || (formSeguro['cpf'].$invalid && formSeguro.$submitted)" role="alert">
+                                                            <span ng-message="required">Esse campo precisa ser preenchido.</span>
+                                                            <span ng-message="cpf">Digite um CPF válido</span>
+                                                            <span ng-message="cnpj">Digite um CNPJ válido</span>
+                                                        </span>
+                                                        <label for="cpf">CPF/CNPJ</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': formSeguro[tipoProduto].$touched && formSeguro[tipoProduto].$invalid }">
+                                                        <select class="form-control" ng-required="true" ng-model="seguro.produtoTipo" ng-options="item as item.tipo for item in produtoTipos track by item.id" ng-change="seguro.produto.descricao = ''"></select>
+                                                        <label for="inputTipoProduto">Tipo do produto</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4" ng-if="seguro.produtoTipo.id == 1">
+                                                    <div class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': (formSeguro['descricao1'].$touched && formSeguro['descricao1'].$invalid) || (formSeguro['descricao1'].$invalid && formSeguro.$submitted) }">
+                                                        <input type="text" ui-br-cpf-mask ng-model="seguro.produto.descricao" ng-required="true" class="form-control" ng-class="seguro.produto.descricao != undefined ? 'edited' : ''" id="descricao1" name="descricao1">
+                                                        <span class="help-block" ng-hide="(formSeguro['descricao1'].$touched && formSeguro['descricao1'].$invalid) || (formSeguro['descricao1'].$invalid && formSeguro.$submitted)">digite o CPF do segurado</span>
+                                                        <span class="help-block help-block-error" ng-messages="formSeguro['descricao1'].$error" ng-if="(formSeguro['descricao1'].$touched && formSeguro['descricao1'].$invalid) || (formSeguro['descricao1'].$invalid && formSeguro.$submitted)" role="alert">
+                                                            <span ng-message="required">Esse campo precisa ser preenchido.</span>
+                                                            <span ng-message="cpf">Digite um CPF válido</span>
+                                                        </span>
+                                                        <label for="descricao1">CPF do segurado</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4" ng-if="seguro.produtoTipo.id == 2">
+                                                    <div class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': (formSeguro['descricao2'].$touched && formSeguro['descricao2'].$invalid) || (formSeguro['descricao2'].$invalid && formSeguro.$submitted) }">
+                                                        <input type="text" ng-model="seguro.produto.descricao" ng-required="true" class="form-control" ng-class="seguro.produto.descricao != undefined ? 'edited' : ''" id="descricao2" name="descricao2">
+                                                        <span class="help-block" ng-hide="(formSeguro['descricao2'].$touched && formSeguro['descricao2'].$invalid) || (formSeguro['descricao2'].$invalid && formSeguro.$submitted)">Endereço para o seguro</span>
+                                                        <span class="help-block help-block-error" ng-messages="formSeguro['descricao2'].$error" ng-if="(formSeguro['descricao2'].$touched && formSeguro['descricao2'].$invalid) || (formSeguro['descricao2'].$invalid && formSeguro.$submitted)" role="alert">
+                                                            <span ng-message="required">Esse campo precisa ser preenchido.</span>
+                                                        </span>
+                                                        <label for="descricao2">Endereço do risco</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4" ng-if="seguro.produtoTipo.id == 3">
+                                                    <div class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': (formSeguro['descricao3'].$touched && formSeguro['descricao3'].$invalid) || (formSeguro['descricao3'].$invalid && formSeguro.$submitted) }">
+                                                        <input type="text" ui-br-car-plate-mask ng-model="seguro.produto.descricao" ng-required="true" class="form-control" ng-class="seguro.produto.descricao != undefined ? 'edited' : ''" id="descricao3" name="descricao3">
+                                                        <span class="help-block" ng-hide="(formSeguro['descricao3'].$touched && formSeguro['descricao3'].$invalid) || (formSeguro['descricao3'].$invalid && formSeguro.$submitted)">insira a placa do veículo à ser segurado</span>
+                                                        <span class="help-block help-block-error" ng-messages="formSeguro['descricao3'].$error" ng-if="(formSeguro['descricao3'].$touched && formSeguro['descricao3'].$invalid) || (formSeguro['descricao3'].$invalid && formSeguro.$submitted)" role="alert">
+                                                            <span ng-message="required">Esse campo precisa ser preenchido.</span>
+                                                            <span ng-message="carPlate">Digite uma placa válida</span>
+                                                        </span>
+                                                        <label for="descricao3">Placa do veículo</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" ng-disabled="!formSeguro.$valid" ng-click="finish()">{{edit === true ? 'Editar' : 'Cadastrar'}}</button>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-4">
+                                        <md-toolbar class="md-primary _md _md-toolbar-transitions">
+                                            <div class="md-toolbar-tools">
+                                                <h3>Resumo</h3>
+                                                <a href="/wwwroot/seguros.html" class="btn btn-sm green" style="margin-left: auto;">
+                                                    <i class="fa fa-list"></i> Ver todos os seguros
+                                                </a>
+                                            </div>
+                                        </md-toolbar>
+                                        <div class="portlet light material-white bordered">
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p ng-if="!seguro.cpf">Por favor, preencha os campos ao lado para cadastrar um novo seguro</p>
+                                                    <p ng-if="seguro.cpf">
+                                                        <b>
+                                                            <span ng-if="seguro.cpf.length === 11">CPF</span>
+                                                            <span ng-if="seguro.cpf.length > 11">CNPJ</span>
+                                                            do cliente:
+                                                        </b>
+                                                        <br />
+                                                        <span ng-if="seguro.cpf.length === 11">{{seguro.cpf | brCpf}}</span>
+                                                        <span ng-if="seguro.cpf.length > 11">{{seguro.cpf | brCnpj}}</span>
+                                                    </p>
+                                                    <p ng-if="seguro.produtoTipo">
+                                                        <b>Tipo do seguro:</b>
+                                                        <br />
+                                                        {{seguro.produtoTipo.tipo}}
+                                                    </p>
+                                                    <p ng-if="seguro.produtoTipo.id == 1 && seguro.produto.descricao.length > 0">
+                                                        <b>CPF do segurado:</b>
+                                                        <br />
+                                                        {{seguro.produto.descricao}}
+                                                    </p>
+                                                    <p ng-if="seguro.produtoTipo.id == 2 && seguro.produto.descricao.length > 0">
+                                                        <b>Endereço segurado:</b>
+                                                        <br />
+                                                        {{seguro.produto.descricao}}
+                                                    </p>
+                                                    <p ng-if="seguro.produtoTipo.id == 3 && seguro.produto.descricao.length > 0">
+                                                        <b>Placa do veículo segurado:</b>
+                                                        <br />
+                                                        {{seguro.produto.descricao}}
+                                                    </p>
+                                                </div>
+                                            </div>
+     
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </ng-form>
+                    </md-content>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

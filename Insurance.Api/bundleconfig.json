@@ -1,0 +1,165 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/app.min.css",
+    "inputFiles": [
+      "wwwroot/css/app.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/controllers/listaTelefonicaCtrl.min.js",
+    "inputFiles": [
+      "wwwroot/js/controllers/listaTelefonicaCtrl.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
+      "wwwroot/js/app.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/controllers/produtoCadastrarCtrl.min.js",
+    "inputFiles": [
+      "wwwroot/js/controllers/produtoCadastrarCtrl.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/directives/iphouseInput.min.js",
+    "inputFiles": [
+      "wwwroot/js/directives/iphouseInput.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/directives/uiInput.min.js",
+    "inputFiles": [
+      "wwwroot/js/directives/uiInput.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/services/contatosAPIService.min.js",
+    "inputFiles": [
+      "wwwroot/js/services/contatosAPIService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/controllers/testeCtrl.min.js",
+    "inputFiles": [
+      "wwwroot/js/controllers/testeCtrl.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/services/authService.min.js",
+    "inputFiles": [
+      "wwwroot/js/services/authService.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/services/encode.min.js",
+    "inputFiles": [
+      "wwwroot/js/services/encode.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/custom.min.css",
+    "inputFiles": [
+      "wwwroot/css/custom.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/layout.min.css",
+    "inputFiles": [
+      "wwwroot/css/layout.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/default.min.css",
+    "inputFiles": [
+      "wwwroot/css/default.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/components-rounded.min.css",
+    "inputFiles": [
+      "wwwroot/css/components-rounded.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/plugins.min.css",
+    "inputFiles": [
+      "wwwroot/css/plugins.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/layout.min.js",
+    "inputFiles": [
+      "wwwroot/js/layout.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/quick-sidebar.min.js",
+    "inputFiles": [
+      "wwwroot/js/quick-sidebar.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/angular-material/angular-material.min.min.js",
+    "inputFiles": [
+      "wwwroot/lib/angular-material/angular-material.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/angular-material/angular-material.min.js",
+    "inputFiles": [
+      "wwwroot/lib/angular-material/angular-material.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/directives/input-types.min.js",
+    "inputFiles": [
+      "wwwroot/js/directives/input-types.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/directives/helpers.min.js",
+    "inputFiles": [
+      "wwwroot/js/directives/helpers.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/pages/produto-cadastrar.js",
+    "inputFiles": [
+      "wwwroot/js/directives/helpers.js",
+      "wwwroot/js/directives/input-types.js",
+      "wwwroot/js/directives/uiInput.js",
+      "wwwroot/js/controllers/produtoCadastrarCtrl.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/pages/produto-cadastrar.min.css",
+    "inputFiles": [
+      "wwwroot/css/pages/produto-cadastrar.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/services/UploadService.min.js",
+    "inputFiles": [
+      "wwwroot/js/services/UploadService.js"
+    ]
+  }
+]

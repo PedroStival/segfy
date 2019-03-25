@@ -1,0 +1,103 @@
+﻿<div ng-switch="type" class="{{class}}">
+    <div ng-switch-when="text" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': (form[uniqueId].$touched && form[uniqueId].$invalid) || (form[uniqueId].$invalid && form.$submitted) }">
+        <div class="input-group">
+            <input type="text" ui-text ng-model="$parent.ngModel" ng-required="{{required}}" ng-minlength="minlength" ng-maxlength="maxlength" start="{{start}}" class="form-control" ng-class="ngModel != undefined ? 'edited' : ''" id="{{uniqueId}}" name="{{uniqueId}}">
+            
+            <span class="help-block" ng-hide="(form[uniqueId].$touched && form[uniqueId].$invalid) || (form[uniqueId].$invalid && form.$submitted)">{{helper}}</span>
+            <span class="help-block help-block-error" ng-messages="form[uniqueId].$error" ng-if="(form[uniqueId].$touched && form[uniqueId].$invalid) || (form[uniqueId].$invalid && form.$submitted)" role="alert">
+                <span ng-message="required">Esse campo precisa ser preenchido.</span>
+                <span ng-message="minlength">Digite ao menos {{minlength}} caracteres.</span>
+                <span ng-message="maxlength">Você ultrapassou o número máximo de {{maxlength}} caracteres.</span>
+            </span>
+            <label for="{{uniqueId}}">{{title}}</label>
+            <span class="input-group-addon" ng-transclude>
+            </span>
+        </div>
+    </div>
+    <div ng-switch-when="select" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <input type="text" ng-model="$parent.ngModel" ng-required="{{required}}" class="form-control display-none" ng-class="ngModel != undefined ? 'edited' : ''" id="{{uniqueId}}" name="{{uniqueId}}">
+        <label for="{{uniqueId}}">{{title}}</label>
+        <md-select ng-model="$parent.ngModel" aria-label="{{title}}" md-on-open="selectOnOpen()" md-on-close="selectOnClose()">
+            <div ng-transclude></div>
+        </md-select>
+    </div>
+    <div ng-switch-when="select-multiple" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <input type="text" ng-model="$parent.ngModel" ng-required="{{required}}" class="form-control display-none" ng-class="ngModel != undefined ? 'edited' : ''" id="{{uniqueId}}" name="{{uniqueId}}">
+        <label for="{{uniqueId}}">{{title}}</label>
+        <md-select ng-model="$parent.ngModel" aria-label="{{title}}" md-on-open="selectOnOpen()" md-on-close="selectOnClose()" multiple="{{multiple}}">
+            <div ng-transclude></div>
+        </md-select>
+    </div>
+    <div ng-switch-when="currency" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <input type="text" ui-decimal ng-model="$parent.ngModel" ng-required="{{required}}" min="{{min}}" max="{{max}}" start="{{start}}" class="form-control" ng-class="ngModel != undefined ? 'edited' : ''" id="{{uniqueId}}" name="{{uniqueId}}">
+        <label for="{{uniqueId}}">{{title}}</label>
+        <span class="help-block" ng-hide="form[uniqueId].$touched && form[uniqueId].$invalid">{{helper}}</span>
+        <span class="help-block help-block-error" ng-messages="form[uniqueId].$error" ng-if="form[uniqueId].$touched && form[uniqueId].$invalid" role="alert">
+            <span ng-message="required">Esse campo precisa ser preenchido.</span>
+            <span ng-message="min">O valor mínimo é {{min}}</span>
+            <span ng-message="max">O valor máximo é {{max}}</span>
+        </span>
+    </div>
+    <div ng-switch-when="number" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <div class="input-group" ng-init="open = false" ng-destroy="open = false">
+            <input type="text" ui-integer ng-model="$parent.ngModel" ng-required="{{required}}" min="{{min}}" max="{{max}}" start="{{start}}" ng-focus="open = true" class="form-control" ng-class="ngModel != undefined ? 'edited' : ''" id="{{uniqueId}}" name="{{uniqueId}}">
+            <label for="{{uniqueId}}">{{title}}</label>
+            <span class="input-group-addon">
+                <button class="btn btn-icon-only blue btn-minus" ng-click="minus()" ng-show="open == true">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <button class="btn btn-icon-only blue btn-plus" ng-click="plus()" ng-show="open == true">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div ng-switch-when="check" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <md-checkbox ng-model="$parent.ngModel" aria-label="{{title}}" ng-checked="{{start}}">
+            <span ng-transclude></span>{{title}} 
+        </md-checkbox>
+    </div>
+    <div ng-switch-when="switch" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <input id="{{uniqueId}}" ui-switch ng-model="$parent.ngModel" start="{{start}}" type="checkbox" switch-on-text="{{onText}}" switch-off-text="{{offText}}" name="{{uniqueId}}">
+    </div>
+    <div ng-switch-when="images" class="form-group" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <div class="btn btn-primary" ngf-select="uploadFiles($files)" multiple="multiple">Upload on file select</div>
+
+        <md-progress-linear md-mode="determinate" value="{{progress}}"></md-progress-linear>
+        <ul>
+            <li ng-repeat="file in $parent.ngModel">
+                <div class="thumbnail">
+                    <img src="../temp/{{file}}">
+                    <div class="caption">
+                        <button class="btn btn-danger" type="button" ng-click="removeImage($index)">Excluir</button>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+
+    </div>
+    <div ng-switch-when="date" class="form-group form-md-line-input form-md-floating-label" ng-class="{ 'has-error': form[uniqueId].$touched && form[uniqueId].$invalid }">
+        <div class="input-group" ng-init="open = false">
+            <input type="text" ui-date ng-model="$parent.ngModel" min="{{min}}" max="{{max}}" start="{{start}}" class="form-control" ng-class="ngModel != undefined ? 'edited' : ''" id="{{uniqueId}}" name="{{uniqueId}}">
+            <span class="help-block" ng-hide="form[uniqueId].$touched && form[uniqueId].$invalid">{{helper}}</span>
+            <span class="help-block help-block-error" ng-messages="form[uniqueId].$error" ng-if="form[uniqueId].$touched && form[uniqueId].$invalid" role="alert">
+                <span ng-message="required">Esse campo precisa ser preenchido.</span>
+                <span ng-message="min">O valor mínimo é {{min}}</span>
+                <span ng-message="max">O valor mánimo é {{max}}</span>
+            </span>
+            <label for="{{uniqueId}}">{{title}}</label>
+            <span class="input-group-addon" ng-destroy="open = false">
+                <button class="btn btn-icon-only blue btn-calendar" ng-click="open = !open">
+                    <i class="fa fa-calendar"></i>
+                </button>
+
+                <span ng-if="open" class="md-calendar-custom">
+                    <md-calendar ng-model="$parent.$parent.ngModel"></md-calendar>
+                </span>
+            </span>
+        </div>
+    </div>
+
+</div>
+

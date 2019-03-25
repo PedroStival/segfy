@@ -1,0 +1,14 @@
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\Insurance.Business.dll
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\Insurance.Business.pdb
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\Insurance.Domain.dll
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\Insurance.Infra.dll
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\EntityFramework.dll
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\Insurance.Domain.pdb
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\Insurance.Infra.pdb
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\Insurance.Infra.dll.config
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\bin\Debug\EntityFramework.xml
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\obj\Debug\Insurance.Business.csprojAssemblyReference.cache
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\obj\Debug\Insurance.Business.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\obj\Debug\Insurance.Business.csproj.CopyComplete
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\obj\Debug\Insurance.Business.dll
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Business\obj\Debug\Insurance.Business.pdb

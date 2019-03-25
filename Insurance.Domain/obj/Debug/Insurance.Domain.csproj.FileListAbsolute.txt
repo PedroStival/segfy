@@ -1,0 +1,6 @@
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Domain\obj\Debug\Insurance.Domain.csprojAssemblyReference.cache
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Domain\obj\Debug\Insurance.Domain.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Domain\bin\Debug\Insurance.Domain.dll
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Domain\bin\Debug\Insurance.Domain.pdb
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Domain\obj\Debug\Insurance.Domain.dll
+C:\Users\usuario\source\repos\Insurance.Api\Insurance.Domain\obj\Debug\Insurance.Domain.pdb

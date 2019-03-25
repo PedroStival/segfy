@@ -1,0 +1,11 @@
+﻿            <span class="switch {{class}}" ng-model="$parent.ngModel" ng-click="" ng-class="{checked: ngModel, disabled: disabled}">
+                             <small></small>
+                             <input type="checkbox"
+                             html +=attrs.id ? ' id="' + attrs.id + '"' : '' ;
+                             html +=attrs.name ? ' name="' + attrs.name + '"' : '' ;
+                             html +=attrs.ngModel ? ' ng-model="' + attrs.ngModel + '"' : '' ;
+                              style="display:none" />' ;
+                             <span class="switch-text">' ; /*adding new container for switch text*/
+            html += attrs.on ? '<span class="on">' + attrs.on + '</span>' : ''; /*switch text on value set by user in directive html markup*/
+            html += attrs.off ? '<span class="off">' + attrs.off + '</span>' : ' ';  /*switch text off value set by user in directive html markup*/
+            </span>'
