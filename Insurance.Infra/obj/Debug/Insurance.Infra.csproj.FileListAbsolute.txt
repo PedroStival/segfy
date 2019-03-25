@@ -3,13 +3,8 @@ C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\obj\Debug\Insurance.
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\Insurance.Infra.dll.config
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\Insurance.Infra.dll
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\Insurance.Infra.pdb
-C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\CommonServiceLocator.dll
-C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\EntityFramework.dll
-C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\Insurance.Domain.dll
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\Insurance.Domain.pdb
-C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\EntityFramework.xml
-C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\obj\Debug\Insurance.Infra.csproj.CopyComplete
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\obj\Debug\Insurance.Infra.dll
 C:\Users\usuario\source\repos\Insurance.Api\Insurance.Infra\obj\Debug\Insurance.Infra.pdb
